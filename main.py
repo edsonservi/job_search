@@ -55,31 +55,70 @@ for site in sites:
     elif "programathor.com.br" in site and site not in thor:
         thor.append(site)
 
-# PANDAPES / INFOJOB
-print(f"{len(pandape)} Sites da infojobs cadastrados")
-buscar_vagas_infojobs(pandape)
-print("FIM DO SCRIPT - Pandape")
+# PANDAPE / INFOJOBS
+while True:
+    answer = input(f"Deseja indexar as vagas dos {len(pandape)} site(s) Pandape / Infojobs? (Y/N)").strip().lower()
+    if answer == 'n':
+        break
+    elif answer == 'y':
+        buscar_vagas_infojobs(pandape)
+        print("FIM DO SCRIPT - Pandape")
+        answer = ""
+        break
+    else:
+        print("Responda 'Y' para sim e 'N' para não por favor.")
 
 # GUPY
-print(f"{len(gupy)} Sites da Gupy cadastrados")
-buscar_vagas_gupy(gupy)
-print("FIM DO SCRIPT - Gupy")
+while True:
+    answer = input(f"Deseja indexar as vagas dos {len(gupy)} site(s) Gupy? (Y/N)").strip().lower()
+    if answer == 'n':
+        break
+    elif answer == 'y':
+        buscar_vagas_gupy(gupy)
+        print("FIM DO SCRIPT - Gupy")
+        answer = ""
+        break
+    else:
+        print("Responda 'Y' para sim e 'N' para não por favor.")
 
 # SOLIDES
-print(f"{len(solides)} Sites da Solides cadastrados")
-buscar_vagas_solides(solides)
-print("FIM DO SCRIPT - Solides")
+while True:
+    answer = input(f"Deseja indexar as vagas dos {len(solides)} site(s) Solides? (Y/N)").strip().lower()
+    if answer == 'n':
+        break
+    elif answer == 'y':
+        buscar_vagas_solides(solides)
+        print("FIM DO SCRIPT - Solides")        
+        answer = ""
+        break
+    else:
+        print("Responda 'Y' para sim e 'N' para não por favor.")
 
 # ABLER
-print(f"{len(abler)} Sites da Abler cadastrados")
-buscar_vagas_abler(abler)
-print("FIM DO SCRIPT - Abler")
+while True:
+    answer = input(f"Deseja indexar as vagas dos {len(abler)} site(s) Abler? (Y/N)").strip().lower()
+    if answer == 'n':
+        break
+    elif answer == 'y':
+        buscar_vagas_abler(abler)
+        print("FIM DO SCRIPT - Abler")
+        answer = ""
+        break
+    else:
+        print("Responda 'Y' para sim e 'N' para não por favor.")
 
 # THOR
-print(f"{len(thor)} site cadastrado")
-buscar_vagas_thor(thor)
-print("FIM DO SCRIPT - Thor")
-
+while True:
+    answer = input(f"Deseja indexar as vagas do programa Thor? (Y/N)").strip().lower()
+    if answer == 'n':
+        break
+    elif answer == 'y':
+        buscar_vagas_thor(thor)
+        print("FIM DO SCRIPT - Thor")
+        answer = ""
+        break
+    else:
+        print("Responda 'Y' para sim e 'N' para não por favor.")
 
 agrupar_jsons()
 print("FIM DO SCRIPT")

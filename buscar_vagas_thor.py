@@ -72,8 +72,3 @@ def buscar_vagas_thor(sites):
                 
     # GRAVA OS RESULTADOS
     gravar_json("Thor", "resultados/thor.json", vagasThor)
-    agrupar_jsons()
-
-
-deposito = ["https://programathor.com.br/jobs"]
-buscar_vagas_thor(deposito)
