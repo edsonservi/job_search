@@ -32,7 +32,9 @@ def buscar_vagas_solides(sites):
             for vaga in vagas:
                 titulo = vaga.find_element(by=By.TAG_NAME, value='h3').text.replace('"', "'").lower()
                 local = vaga.find_elements(by=By.TAG_NAME, value='p')[0].text.replace('"', "'").lower()
-                dataVG = vaga.find_element(by=By.TAG_NAME, value='time').get_attribute('datetime')
+                dataAG = vaga.find_element(by=By.TAG_NAME, value='time').get_attribute('datetime').split("-")
+                dataVG = f"{dataAG[2]}/{dataAG[1]}/{dataAG[0]}"
+
                 s_id = f"{dataVG}{local}{titulo}"
                 if s_id not in controle:
                     linha = {}

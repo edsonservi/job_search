@@ -43,7 +43,8 @@ def buscar_vagas_infojobs(sites):
         vagas = nav.find_elements(by=By.CLASS_NAME, value='vacancy-item')
         for vaga in vagas:
             linha = {}
-            linha["data"] = vaga.find_elements(by=By.CLASS_NAME, value='vacancy-date')[0].text.replace('"', "'").lower()
+            data = vaga.find_elements(by=By.CLASS_NAME, value='vacancy-date')[0].text.replace('"', "'").lower()
+            linha["data"] = data.replace(" jan", "/01/23").replace(" fev", "/02/23").replace(" mar", "/03/23").replace(" abr", "/04/23").replace(" mai", "/05/23").replace(" jun", "/06/23").replace(" jul", "/07/23").replace(" ago", "/08/23").replace(" set", "/09/23").replace(" out", "/10/23").replace(" nov", "/11/23").replace(" dez", "/12/23").replace(".", "")
             linha["local"] = vaga.find_elements(by=By.CLASS_NAME, value='vacancy-location')[0].text.replace('"', "'").lower()
             linha["cargo"] = vaga.find_elements(by=By.CLASS_NAME, value='vacancy-title')[0].text.replace('"', "'").lower()
             linha["tipo"] = "não consta"
