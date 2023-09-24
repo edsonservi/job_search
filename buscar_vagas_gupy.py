@@ -41,9 +41,12 @@ def buscar_vagas_gupy(sites):
                     # DEFINE OS DADOS A SEREM SALVOS
                     linha = {}
                     linha["data"] = data
-                    linha["local"] = vaga.find_element(by=By.CLASS_NAME, value='sc-d868c80d-6').text.replace('"', "'").lower()
-                    linha["cargo"] = vaga.find_element(by=By.CLASS_NAME, value='sc-d868c80d-5').text.replace('"', "'").lower()
-                    linha["tipo"] = vaga.find_element(by=By.CLASS_NAME, value='sc-d868c80d-7').text.replace('"', "'").lower()
+                    linha["local"] = (vaga.find_element(by=By.CLASS_NAME, value='sc-d868c80d-6')
+                                      .text.replace('"', "'").lower())
+                    linha["cargo"] = (vaga.find_element(by=By.CLASS_NAME, value='sc-d868c80d-5')
+                                      .text.replace('"', "'").lower())
+                    linha["tipo"] = (vaga.find_element(by=By.CLASS_NAME, value='sc-d868c80d-7')
+                                     .text.replace('"', "'").lower())
                     linha["link"] = link
                     controle.append(link)
                     vagasGupy.append(linha)

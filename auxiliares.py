@@ -22,7 +22,7 @@ def agrupar_jsons():
     # Armazenadores
     nomes_arquivos = []
     dados = []
-    # Lista o nomes dos arquivos
+    # Lista os nomes dos arquivos
     for root, dirs, files in os.walk('resultados'):
         for name in files:
             if name != 'vagas.json':

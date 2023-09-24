@@ -1,6 +1,5 @@
 from selenium import webdriver
-from selenium.common.exceptions import (NoSuchElementException, ElementNotInteractableException,
-                                        ElementClickInterceptedException)
+from selenium.common.exceptions import (NoSuchElementException)
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
@@ -71,7 +70,6 @@ def buscar_vagas_thor(sites):
                 print(f"Indo para: {nextlink.get_attribute('href')}")
                 nav.get(nextlink.get_attribute('href'))
                 
-
     # GRAVA OS RESULTADOS
     gravar_json("Thor", "resultados/thor.json", vagasThor)
     agrupar_jsons()

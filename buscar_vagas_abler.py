@@ -55,4 +55,4 @@ def buscar_vagas_abler(sites):
                 break
 
     # GRAVA OS RESULTADOS
-    gravar_json('Abler', "resultados/abler.json", vagasAbler )
+    gravar_json('Abler', "resultados/abler.json", vagasAbler)
