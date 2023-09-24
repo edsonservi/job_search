@@ -3,14 +3,10 @@ import json
 import os
 
 
-# FUNÇÕES AUXILIARES
+# FUNÇÕES AUXILIARES %m/%d/%Y, %H:%M:%S
 def pegar_data():
     data_atual = date.today()
-    dia = data_atual.strftime('%d')
-    mesNumero = int(data_atual.strftime('%m'))
-    mesTitulo = ['jan', 'fev', 'mar', 'abr', 'mai', 'jun', 'jul', 'ago', 'set', 'out', 'nov', 'dez']
-    mes = mesTitulo[mesNumero - 1]
-    return f"{dia} {mes}"
+    return data_atual.strftime("%d/%m/%Y")
 
 
 # GRAVAR JSON FILE
